@@ -1,0 +1,368 @@
+{
+  "info": {
+    "_postman_id": "20f4868a-f4ac-4384-af27-10220b0f7fcb",
+    "name": "Smart Campus API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54086857",
+    "_collection_link": "https://go.postman.co/collection/54086857-20f4868a-f4ac-4384-af27-10220b0f7fcb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Discovery",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Room",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"ENG-101\",\n  \"name\": \"Engineering Lab\",\n  \"capacity\": 35\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/rooms",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "rooms"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Rooms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/rooms",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "rooms"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Room By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/rooms/ENG-101",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "rooms",
+            "ENG-101"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Sensor",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"TEMP-001\",\n  \"type\": \"Temperature\",\n  \"status\": \"ACTIVE\",\n  \"currentValue\": 0.0,\n  \"roomId\": \"ENG-101\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Sensors",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Sensors By Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors?type=Temperature",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "Temperature"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Sensor Reading",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": 24.7\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors/TEMP-001/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors",
+            "TEMP-001",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Sensor Readings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors/TEMP-001/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors",
+            "TEMP-001",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Room With Active Sensors",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/rooms/ENG-101",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "rooms",
+            "ENG-101"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Sensor With Missing Room",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"BAD-001\",\n  \"type\": \"CO2\",\n  \"status\": \"ACTIVE\",\n  \"currentValue\": 0.0,\n  \"roomId\": \"NO-SUCH-ROOM\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Maintenance Sensor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"CO2-001\",\n  \"type\": \"CO2\",\n  \"status\": \"MAINTENANCE\",\n  \"currentValue\": 0.0,\n  \"roomId\": \"ENG-101\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Reading To Maintenance Sensor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": 501.2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-001/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "smart-campus-api",
+            "api",
+            "v1",
+            "sensors",
+            "CO2-001",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
